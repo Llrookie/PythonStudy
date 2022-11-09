@@ -34,10 +34,11 @@ str1 = 'zhang san'
 str2 = "li si"
 # 切片，左闭右开
 print(str1[0:4])  # zhan
-# print(str1[1:4])  #han
+print(str1[1:4])  # han
 print(str1[0:])  # zhang san  取整个字符串
 print(str1[:])  # zhang san  取整个字符串
 print(str1[0:-1])  # zhang sa   -1表示最后一位
+print(str1[0:-2])  # zhang s    -2表示倒数第二位
 print(str1[0:9:2])  # zagsn 2表示步长，从第一位开始，然后取第三位、第五位...
 # 转义
 str3 = 'zhang\nsan'
@@ -57,12 +58,60 @@ isalnum():判断字符串是否为字母或数字
 join(list):可以将列表转成string，列表中元素必须为字符串
 split():将字符串分割
 """
-# join()
+str5 = 'sfsd'
+print(str5.isalnum())  # True
+
+"""
+join()
+语法：  'sep'.join(seq)
+参数说明
+sep：分隔符。可以为空
+seq：要连接的元素序列、字符串、元组、字典
+上面的语法即：以sep作为分隔符，将seq所有的元素合并成一个新的字符串
+返回值：返回一个以分隔符sep连接各个元素后生成的字符串
+"""
+
 list1 = ['1', '2', '3']
 print(''.join(list1))  # 123
 print('#'.join(list1))  # 1#2#3
 
-# split()
+"""
+split()函数
+语法：str.split(str="",num=string.count(str))[n]
+参数说明：
+str:表示为分隔符，默认为空格，但是不能为空('')。若字符串中没有分隔符，则把整个字符串作为列表的一个元素
+num:表示分割次数。如果存在参数num，则仅分隔成 num+1 个子字符串，并且每一个子字符串可以赋给新的变量
+[n]:表示选取第n个分片
+返回值：返回一个list列表
+"""
+
 str1 = 'zhangsan'
+print(str1.split())     # 默认为空格，但不能写成str1.split(''),输出内容：[zhangsan]
 print(str1.split('a'))  # ['zh','ngs','n']   将字符串使用指定的字符进行分割为list
-print(str1.split('a'), 1)  # ['zh','ngsan']  分割一次
+print(str1.split('a', 1))  # ['zh','ngsan']  分割一次
+print(str1.split('a', 2))  # ['zh', 'ngs', 'n'] 分割两次
+print(str1.split('a', 2)[1])   # ngs,分割两次，取第一分片
+
+"""
+类型转换
+"""
+a = 5.5		 # a为float
+b = int(a)   # b=5,int类型，不会进行四舍五入
+
+a = 5		   # a为int
+b = float(a)   # b=5.0,floatt类型
+
+a = '5'		 # a为string
+b = int(a)   # b=5,int类型，只能将纯数字的字符串转换为int类型，不然会报错
+
+a = '1 + 2'
+b = eval(a)  # b=3,将字符串的算数表达式计算结果
+
+a = 'zhangsan'
+b = dict.fromkeys(a)  # {'z': None, 'h': None, 'a': None, 'n': None, 'g': None, 's': None}
+c = dict.fromkeys(a)  # {'z': 10, 'h': 10, 'a': 10, 'n': 10, 'g': 10, 's': 10}
+
+a = 9
+print(bin(a))  # 二进制  0b1001
+print(oct(a))  # 八进制  0o11
+print(hex(a))  # 十六进制  0x9
