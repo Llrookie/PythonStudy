@@ -28,6 +28,16 @@ f.close()"""
 with open('D:\Pytest.txt', 'r') as f:
     result = f.read()    # 读所有行，以字符串返回
     result1 = f.readline()  # 读第一行，以字符串返回
-    result2 = f.readlines()   # 读所有行，以列表形式返回，每行作为一个元素，后面会自动带上\n
-    result3 = f.read().splitlines()  # 读所有行，以列表形式返回，每行作为一个元素，后面会自动取掉\n
-    print(result)
+    result2 = f.readlines()   # 读所有行，以列表形式返回，每行作为一个元素，后面会自动带上\n ['python 是最好的语言\n', 'aaaaa\n', 'bbbbb\n']
+    result3 = f.read().splitlines()  # 读所有行，以列表形式返回，每行作为一个元素，后面会自动取掉\n ['python 是最好的语言', 'aaaaa', 'bbbbb']
+    print(result3)
+
+# 有多个读取方法时，后面的读取内容以前一个方法读取之后剩下的内容为基准
+# eg1:
+# result = f.read()    这里读取了所有内容
+# result = f.readline()  以上面读取之后剩下的内容为基准，那这里读到的内容就是空的
+
+# eg2:
+# result = f.readline()    这里读取了第一行
+# result = f.readlines()    以上面读取之后剩下的内容为基准，读取除第一行以外的数据
+
