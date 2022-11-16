@@ -18,7 +18,7 @@ def xlxs_read(name, index):
 if __name__ == '__main__':
     context = xlxs_read('2.xlsx', 0)  # 得到索引为0的sheet页
     # context = xlxs_read(r'K:\PythonProjects\venv\test',0)   #也可以使用绝对路径，r表示字符串里的\不转义
-    for i in range(1, context.nrows):  # 返回行数 context.nrows   列数：sheet.ncols
+    for i in range(1, context.nrows):  # 返回行数 context.nrows   列数：context.ncols
         rows = context.row_values(i)  # 得到指定行的内容，列表形式返回
         print(rows)
         print(rows[0])  # 得到某一行的第一列数据
