@@ -1,5 +1,6 @@
 import re
 import requests
+import pytest
 
 # 需安装pytest  pip install pytest
 
@@ -84,4 +85,4 @@ class TestGetrequests:
 
 
 if __name__ == '__main__':
-    pytest.main([-vs])
+    pytest.main(['-vs'])
