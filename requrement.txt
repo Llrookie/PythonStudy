@@ -1,5 +1,5 @@
   pytest-html
   pytest-xdist
   pytest-ordering
-  pytest-rerunfailuser
+  pytest-rerunfailures
   allure-pytest
