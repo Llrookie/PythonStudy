@@ -11,6 +11,14 @@ import pytest
 
 
 class TestGetrequests:
+
+    # 前置
+    def setup(self):
+        print('在每个用例执行前执行')
+    # 后置
+    def teardown(self):
+        print('在每个用例执行后执行')
+
     # 类变量，通过类名.变量访问
     access_token = ''
     csrf_token = ''
@@ -18,6 +26,7 @@ class TestGetrequests:
     session = requests.session()
 
     # get请求
+    @pytest.mark.smoke  # 标记为冒烟用例
     def test_get_Token(self):
         url = 'https://api.weixin.qq.com/cgi-bin/token'
         data = {
@@ -85,4 +94,10 @@ class TestGetrequests:
 
 
 if __name__ == '__main__':
-    pytest.main(['-vs'])
+    pytest.main()
+    # -v 输出更加详细的运行信息
+    # -s 输出调试信息
+    # -n=2 多线程运行，有两个线程
+    # --reruns=2 s失败用例重跑两次
+    # --html=文件路径   将结果输出到指定路径，生成html报告
+    # -m "smoke" 执行冒烟分组的用例
