@@ -21,6 +21,8 @@ class YamlUnit:
         with open('K:\PythonStudy\extract.yml', 'w', encoding='utf-8') as f:
             f.truncate()
 
-    # 测试传参
-    def chuancantest(self,data):
-        print(data)
+    # 读取测试用例的yaml文件
+    def read_get_token_yaml(self):
+        with open('K:\PythonStudy\get_token.yml', 'r', encoding='utf-8') as f:
+            value = yaml.load(stream=f, Loader=yaml.FullLoader)
+            return value
