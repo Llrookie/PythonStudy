@@ -86,30 +86,30 @@ num:表示分割次数。如果存在参数num，则仅分隔成 num+1 个子字
 """
 
 str1 = 'zhangsan'
-print(str1.split())     # 默认为空格，但不能写成str1.split(''),输出内容：[zhangsan]
+print(str1.split())  # 默认为空格，但不能写成str1.split(''),输出内容：[zhangsan]
 print(str1.split('a'))  # ['zh','ngs','n']   将字符串使用指定的字符进行分割为list
 print(str1.split('a', 1))  # ['zh','ngsan']  分割一次
 print(str1.split('a', 2))  # ['zh', 'ngs', 'n'] 分割两次
-print(str1.split('a', 2)[1])   # ngs,分割两次，取第一分片
+print(str1.split('a', 2)[1])  # ngs,分割两次，取第一分片
 
 """
 类型转换
 """
-a = 5.5		 # a为float
-b = int(a)   # b=5,int类型，不会进行四舍五入
+a = 5.5  # a为float
+b = int(a)  # b=5,int类型，不会进行四舍五入
 
-a = 5		   # a为int
-b = float(a)   # b=5.0,floatt类型
+a = 5  # a为int
+b = float(a)  # b=5.0,float类型
 
-a = '5'		 # a为string
-b = int(a)   # b=5,int类型，只能将纯数字的字符串转换为int类型，不然会报错
+a = '5'  # a为string
+b = int(a)  # b=5,int类型，只能将纯数字的字符串转换为int类型，不然会报错
 
 a = '1 + 2'
 b = eval(a)  # b=3,将字符串的算数表达式计算结果
 
 a = 'zhangsan'
 b = dict.fromkeys(a)  # {'z': None, 'h': None, 'a': None, 'n': None, 'g': None, 's': None}
-c = dict.fromkeys(a)  # {'z': 10, 'h': 10, 'a': 10, 'n': 10, 'g': 10, 's': 10}
+c = dict.fromkeys(a, 10)  # {'z': 10, 'h': 10, 'a': 10, 'n': 10, 'g': 10, 's': 10}
 
 a = 9
 print(bin(a))  # 二进制  0b1001
