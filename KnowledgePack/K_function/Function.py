@@ -5,8 +5,8 @@ def 函数名(参数列表):
 
 
 # 示例1  带有形参
-def area(weight, heignt):
-    return weight * heignt
+def area(weight, height):
+    return weight * height
 
 
 # 没有return的时候，函数默认返回None

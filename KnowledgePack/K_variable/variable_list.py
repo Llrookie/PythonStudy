@@ -24,7 +24,7 @@ print(list1 * 2)  # [1,2,3,1,2,3]
 
 # 常用方法
 list1.append(4)  # [1,2,3,4]  增加一个元素
-list1.append('5')   # [1, 2, 3, 4, '5']
+list1.append('5')  # [1, 2, 3, 4, '5']
 list1.pop(0)  # [2,3,4]    根据下标删除一个元素
 list2.remove('a')  # ['b','c']  根据对象删除一个元素
 list2.clear()  # []  清空列表
@@ -32,5 +32,10 @@ list3 = ['a', 'b', 'c', 'b']
 result = list3.index('b')  # 结果为1，返回指定成员在list中第一次出现的位置下标
 print(list3.count('b'))  # 结果为2，统计指定对象的个数
 list3.sort()  # ['a','b','b','c'],升序
-list3.sort(reverse=True)  # ['c','b','c','a'],降序
+list3.sort(reverse=True)  # ['c','b','b','a'],降序
 list3.reverse()  # ['b','c','b','a'],反序
+print(list3)
+# 切片
+print(list3[0:2])  # ['a', 'b']
+print(list3[0:])  # ['a', 'b', 'b', 'c']
+print(list3[0:-1])  # ['a', 'b', 'b']
