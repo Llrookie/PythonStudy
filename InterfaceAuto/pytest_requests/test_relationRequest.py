@@ -36,15 +36,15 @@ class TestRelationrequests:
     # post请求
     def test_edit_flag(self):
         # 将需要的数据读出来
-        value = YamlUnit.read_extract_yaml('access_token')
+        value = YamlUnit().read_extract_yaml('access_token')
 
-        url = 'https://api.weixin.qq.com/cgi-bin/tags/update?access_token=' + value + ""
-        data = {
-            "tag": {"id": 134, "name": "广东人"}
-        }
-
-        rep = requests.request('post', url=url, json=data)
-        print(rep.json())
+        # url = 'https://api.weixin.qq.com/cgi-bin/tags/update?access_token=' + value + ""
+        # data = {
+        #     "tag": {"id": 134, "name": "广东人"}
+        # }
+        #
+        # rep = requests.request('post', url=url, json=data)
+        print(value)
         print('test_edit_flag is ok')
 
 
